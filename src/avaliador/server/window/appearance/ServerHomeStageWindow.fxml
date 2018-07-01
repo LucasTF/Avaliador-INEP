@@ -5,15 +5,15 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="160.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="220.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <VBox alignment="TOP_CENTER" prefHeight="160.0" prefWidth="200.0" spacing="10.0">
+      <VBox alignment="CENTER" prefHeight="220.0" prefWidth="300.0" spacing="10.0">
          <children>
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Selecione uma opção:" />
-            <Button fx:id="createQuestionnaireButton" mnemonicParsing="false" prefWidth="120.0" text="Criar prova" />
-            <Button fx:id="loadQuestionnaireButton" layoutX="54.0" layoutY="28.0" mnemonicParsing="false" prefWidth="120.0" text="Carregar prova" />
-            <Button fx:id="dropQuestionnaireButton" layoutX="54.0" layoutY="60.0" mnemonicParsing="false" prefWidth="120.0" text="Deletar prova" />
+            <Button fx:id="createQuestionnaireButton" mnemonicParsing="false" onAction="#createButtonManager" prefWidth="120.0" text="Criar prova" />
+            <Button fx:id="loadQuestionnaireButton" layoutX="54.0" layoutY="28.0" mnemonicParsing="false" onAction="#loadButtonManager" prefWidth="120.0" text="Carregar prova" />
+            <Button fx:id="dropQuestionnaireButton" layoutX="54.0" layoutY="60.0" mnemonicParsing="false" onAction="#dropButtonManager" prefWidth="120.0" text="Deletar prova" />
+            <Button fx:id="evaluateQuestionnaireButton" layoutX="50.0" layoutY="122.0" mnemonicParsing="false" onAction="#evaluateButtonManager" prefWidth="120.0" text="Avaliar prova" />
          </children>
       </VBox>
    </children>
