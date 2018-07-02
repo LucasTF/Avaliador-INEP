@@ -13,6 +13,8 @@ public class ServerHomeStage implements IStage{
 	@FXML private Button dropQuestionnaireButton;
 	@FXML private Button evaluateQuestionnaireButton;
 	
+	private IStage questionnaireWindow = null;
+	
 	private Stage stage;
 	private Scene scene;
 	private SceneFactory sceneFactory;
@@ -37,7 +39,11 @@ public class ServerHomeStage implements IStage{
 	
 	@FXML
 	public void createButtonManager() {
-		// TO BE ADDED
+		// TEMPORARY SOLUTION FOR JUST 1 QUESTIONNAIRE WINDOW. MUST CHANGE LATER.
+		if(questionnaireWindow == null) {
+			questionnaireWindow = new ServerCreateStage();
+			questionnaireWindow.startStage();
+		}
 	}
 	
 	@FXML
