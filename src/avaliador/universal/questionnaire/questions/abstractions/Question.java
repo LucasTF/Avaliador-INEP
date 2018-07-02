@@ -4,8 +4,8 @@ import avaliador.universal.questionnaire.questions.types.Alternative;
 
 public abstract class Question {
 	
-	protected String author;
 	protected String questionStatement;
+	protected double value;
 	
 	protected Alternative[] alternative;
 	

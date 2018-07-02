@@ -8,6 +8,8 @@ public class Questionnaire {
 	
 	private ArrayList<Question> questions;
 	
+	private String author;
+	
 	public Questionnaire() {
 		questions = new ArrayList<Question>();
 	}
@@ -22,6 +24,14 @@ public class Questionnaire {
 	
 	public void dropQuestion(int id) {
 		questions.remove(id);
+	}
+
+	public String getAuthor() {
+		return author;
+	}
+
+	public void setAuthor(String author) {
+		this.author = author;
 	}
 
 }

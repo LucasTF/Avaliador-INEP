@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="440.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <VBox prefHeight="440.0" prefWidth="300.0">
+         <children>
+            <ScrollPane fx:id="questionScrollPane" prefHeight="420.0" prefWidth="300.0">
+               <content>
+                  <VBox fx:id="questionVBox" alignment="TOP_CENTER" prefHeight="120.0" prefWidth="300.0" spacing="5.0">
+                     <padding>
+                        <Insets top="5.0" />
+                     </padding>
+                  </VBox>
+               </content>
+            </ScrollPane>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="5.0">
+               <children>
+                  <Button fx:id="addQuestionButton" mnemonicParsing="false" prefWidth="130.0" text="Criar questão" />
+                  <Button fx:id="saveQuestionnaireButton" mnemonicParsing="false" prefWidth="130.0" text="Salvar questionário" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
