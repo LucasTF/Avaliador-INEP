@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane fx:id="containerPane" maxHeight="420.0" maxWidth="600.0" minHeight="420.0" minWidth="600.0" prefHeight="420.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <VBox maxWidth="600.0" minWidth="600.0" prefHeight="150.0" prefWidth="600.0">
+         <children>
+            <Pane prefHeight="100.0" prefWidth="600.0">
+               <children>
+                  <Text layoutX="10.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Questão simples, 4 distratores e 1 alternativa correta." wrappingWidth="580.13671875" />
+               </children>
+            </Pane>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

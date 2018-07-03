@@ -1,4 +1,4 @@
-package avaliador.server;
+package avaliador.universal.factories;
 
 import avaliador.universal.questionnaire.questions.*;
 import avaliador.universal.questionnaire.questions.abstractions.Question;

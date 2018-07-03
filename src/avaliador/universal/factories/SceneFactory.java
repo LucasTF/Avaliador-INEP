@@ -1,4 +1,4 @@
-package avaliador.server.window;
+package avaliador.universal.factories;
 
 import java.io.IOException;
 

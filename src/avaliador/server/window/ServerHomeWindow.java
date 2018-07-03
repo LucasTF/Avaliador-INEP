@@ -1,12 +1,13 @@
 package avaliador.server.window;
 
 import avaliador.server.window.abstractions.IStage;
+import avaliador.universal.factories.SceneFactory;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
-public class ServerHomeStage implements IStage{
+public class ServerHomeWindow implements IStage{
 	
 	@FXML private Button createQuestionnaireButton;
 	@FXML private Button loadQuestionnaireButton;
@@ -19,7 +20,7 @@ public class ServerHomeStage implements IStage{
 	private Scene scene;
 	private SceneFactory sceneFactory;
 	
-	public ServerHomeStage(Stage stage) {
+	public ServerHomeWindow(Stage stage) {
 		this.stage = stage;
 	}
 	
@@ -41,7 +42,7 @@ public class ServerHomeStage implements IStage{
 	public void createButtonManager() {
 		// TEMPORARY SOLUTION FOR JUST 1 QUESTIONNAIRE WINDOW. MUST CHANGE LATER.
 		if(questionnaireWindow == null) {
-			questionnaireWindow = new ServerCreateStage();
+			questionnaireWindow = new ServerCreateWindow();
 			questionnaireWindow.startStage();
 		}
 	}

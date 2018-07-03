@@ -12,13 +12,13 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="510.0" prefWidth="310.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <VBox prefHeight="510.0" prefWidth="310.0">
+      <VBox alignment="CENTER" prefHeight="510.0" prefWidth="310.0">
          <children>
-            <HBox prefHeight="100.0" prefWidth="310.0">
+            <HBox prefHeight="70.0" prefWidth="310.0">
                <children>
                   <VBox alignment="CENTER_LEFT" prefHeight="85.0" prefWidth="165.0">
                      <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Nome do Questionário">
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Nome da Prova:">
                            <VBox.margin>
                               <Insets left="10.0" />
                            </VBox.margin>
@@ -32,7 +32,7 @@
                   </VBox>
                   <VBox alignment="CENTER_LEFT" prefHeight="85.0" prefWidth="165.0">
                      <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Autor">
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Autor:">
                            <VBox.margin>
                               <Insets left="10.0" />
                            </VBox.margin>
@@ -46,7 +46,7 @@
                   </VBox>
                </children>
             </HBox>
-            <HBox alignment="TOP_CENTER" prefHeight="49.0" prefWidth="310.0" spacing="5.0">
+            <HBox alignment="TOP_CENTER" prefHeight="23.0" prefWidth="310.0" spacing="5.0">
                <children>
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Nota Total:">
                      <font>
@@ -60,16 +60,19 @@
                   </Text>
                </children>
             </HBox>
-            <ScrollPane fx:id="questionScrollPane" prefHeight="360.0" prefWidth="310.0">
+            <ScrollPane fx:id="questionScrollPane" fitToWidth="true" prefHeight="355.0">
                <content>
-                  <VBox fx:id="questionVBox" alignment="TOP_CENTER" prefHeight="120.0" prefWidth="308.0" spacing="5.0">
+                  <VBox fx:id="questionVBox" alignment="TOP_CENTER" spacing="5.0">
                      <padding>
                         <Insets top="5.0" />
                      </padding>
                   </VBox>
                </content>
+               <VBox.margin>
+                  <Insets left="5.0" right="-5.0" />
+               </VBox.margin>
             </ScrollPane>
-            <HBox alignment="CENTER" prefHeight="90.0" prefWidth="300.0" spacing="5.0">
+            <HBox alignment="CENTER" prefHeight="70.0" prefWidth="310.0" spacing="5.0">
                <children>
                   <Button fx:id="addQuestionButton" mnemonicParsing="false" onAction="#createButtonManager" prefWidth="130.0" text="Criar questão" />
                   <Button fx:id="saveQuestionnaireButton" mnemonicParsing="false" onAction="#saveButtonManager" prefWidth="130.0" text="Salvar questionário" />

@@ -1,6 +1,6 @@
 package avaliador;
 
-import avaliador.server.window.ServerHomeStage;
+import avaliador.server.window.ServerHomeWindow;
 import avaliador.server.window.abstractions.IStage;
 import javafx.application.Application;
 import javafx.stage.Stage;
@@ -17,7 +17,7 @@ public class Program extends Application{
 	@Override
 	public void start(Stage homeStage) throws Exception {
 		if(appType.equals("Server")) {
-			IStage serverWindow = new ServerHomeStage(homeStage);
+			IStage serverWindow = new ServerHomeWindow(homeStage);
 			serverWindow.startStage();
 		}
 		else if(appType.equals("Client")) {
