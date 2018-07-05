@@ -1,7 +1,9 @@
 package avaliador.server.window.abstractions;
 
+import javafx.scene.layout.AnchorPane;
+
 public interface IContainer {
 	
-	public Object getContainer();
+	public AnchorPane getContainer();
 
 }

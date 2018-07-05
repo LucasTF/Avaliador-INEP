@@ -2,7 +2,6 @@ package avaliador.universal.factories;
 
 import java.io.IOException;
 
-import avaliador.server.window.QPointerContainer;
 import avaliador.server.window.UniqueQuestionContainer;
 import avaliador.server.window.abstractions.IContainer;
 import javafx.fxml.FXMLLoader;
@@ -20,7 +19,7 @@ public class ContainerFactory{
 				container = new UniqueQuestionContainer();
 			}
 			else if(fxmlPath.contains("QPointerContainer")) {
-				container = new QPointerContainer();
+				//container = new QPointerContainer();
 			}
 			loader = new FXMLLoader(container.getClass().getResource(fxmlPath));
 			loader.setController(container);

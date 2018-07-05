@@ -9,14 +9,14 @@ import javafx.scene.Scene;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.SplitMenuButton;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 public class ServerNewQuestionWindow implements IStage{
 	
+	@FXML private AnchorPane mainPane;
 	@FXML private SplitMenuButton menuMain;
-	@FXML private MenuItem uniqueMenu;
-	@FXML private Pane containerPane;
+	@FXML private MenuItem qUniqueMenu;
+	@FXML private AnchorPane containerPane;
 	
 	private Stage stage;
 	private Scene scene;
@@ -43,10 +43,12 @@ public class ServerNewQuestionWindow implements IStage{
 	}
 	
 	@FXML
-	public void setContainerPane() {
+	public void setUniqueQuestion() {
+		containerPane.getChildren().clear();
 		ContainerFactory containerFactory = new ContainerFactory();
 		questionContainer = containerFactory.buildContainer(containerPane, "appearance/containers/SimpleQuestionContainer.fxml");
-		containerPane.getChildren().add((AnchorPane) questionContainer.getContainer());
+		containerPane.getChildren().setAll(questionContainer.getContainer());
+		stage.sizeToScene();
 	}
 
 }
