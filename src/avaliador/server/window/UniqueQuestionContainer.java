@@ -1,51 +1,46 @@
 package avaliador.server.window;
 
+import java.io.IOException;
+
 import avaliador.server.window.abstractions.IContainer;
+import avaliador.server.window.abstractions.QuestionContainer;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.RadioButton;
-import javafx.scene.control.Spinner;
+import javafx.scene.Parent;
 import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
-import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.AnchorPane;
 
-public class UniqueQuestionContainer implements IContainer{
-
-	@FXML private AnchorPane containerPane;
+public class UniqueQuestionContainer extends QuestionContainer implements IContainer{
 	
-	@FXML private Spinner<Integer> qNumberSpinner;
-	@FXML private TextField qValueField;
-	@FXML private TextArea qStatementArea;
+	private static final String fxml = "appearance/containers/SimpleQContainer.fxml";
 	
-	@FXML private ToggleGroup answerGroup;
-	@FXML private RadioButton aRadio;
-	@FXML private RadioButton bRadio;
-	@FXML private RadioButton cRadio;
-	@FXML private RadioButton dRadio;
-	@FXML private RadioButton eRadio;
+	@FXML private TextArea aAlternative;
+	@FXML private TextArea bAlternative;
+	@FXML private TextArea cAlternative;
+	@FXML private TextArea dAlternative;
+	@FXML private TextArea eAlternative;
 	
-	@FXML private TextArea aArea;
-	@FXML private TextArea bArea;
-	@FXML private TextArea cArea;
-	@FXML private TextArea dArea;
-	@FXML private TextArea eArea;
-	
-	@FXML private Button addQuestionButton;
-	
-	public UniqueQuestionContainer() {
-		//SpinnerValueFactory<Integer> qNumberSpinnerFactory = new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 100);
-		//this.qNumberSpinner.setValueFactory(qNumberSpinnerFactory);
-	}
-	
-	@Override
-	public AnchorPane getContainer() {
-		return containerPane;
+	public UniqueQuestionContainer(Parent parent) throws IOException {
+		super(parent, fxml);
+		this.aAlternative.setWrapText(true);
+		this.bAlternative.setWrapText(true);
+		this.cAlternative.setWrapText(true);
+		this.dAlternative.setWrapText(true);
+		this.eAlternative.setWrapText(true);
 	}
 	
 	@FXML
 	public void addQuestion() {
-		System.out.println(aArea.getText());
+		System.out.println(this.getQuestionTitle());
+	}
+	
+	public String getA() { return this.aAlternative.getText(); }
+	public String getB() { return this.bAlternative.getText(); }
+	public String getC() { return this.cAlternative.getText(); }
+	public String getD() { return this.dAlternative.getText(); }
+	public String getE() { return this.eAlternative.getText(); }
+	
+	public AnchorPane getContainerPane() {
+		return this.containerPane;
 	}
 	
 }

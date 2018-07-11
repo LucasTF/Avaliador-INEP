@@ -2,23 +2,19 @@ package avaliador.server.window;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import javafx.scene.control.SplitPane;
-import javafx.scene.text.Text;
+import javafx.scene.control.Label;
+import javafx.scene.layout.AnchorPane;
 
 public class QPointerContainer{
 	
-	@FXML private SplitPane containerPane;
-	@FXML private Text containerText;
+	@FXML private AnchorPane containerPane;
+	@FXML private Label questionTitle;
 	
-	@FXML private Button containerEditButton;
-	@FXML private Button containerDeleteButton;
+	@FXML private Button editButton;
+	@FXML private Button deleteButton;
 	
-	public SplitPane getContainer() {
+	public AnchorPane getContainerPane() {
 		return containerPane;
-	}
-	
-	public double getContainerSize() {
-		return containerPane.getPrefHeight();
 	}
 
 }

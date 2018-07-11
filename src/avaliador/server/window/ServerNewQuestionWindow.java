@@ -15,12 +15,17 @@ public class ServerNewQuestionWindow implements IStage{
 	
 	@FXML private AnchorPane mainPane;
 	@FXML private SplitMenuButton menuMain;
-	@FXML private MenuItem qUniqueMenu;
+	
+	@FXML private MenuItem uniqueQuestion;
+	@FXML private MenuItem multQuestion;
+	@FXML private MenuItem assertionQuestion;
+	@FXML private MenuItem associationQuestion;
+	@FXML private MenuItem orderQuestion;
+	
 	@FXML private AnchorPane containerPane;
 	
 	private Stage stage;
 	private Scene scene;
-	private SceneFactory sceneFactory;
 	private IContainer questionContainer;
 	
 	public ServerNewQuestionWindow() {
@@ -29,7 +34,7 @@ public class ServerNewQuestionWindow implements IStage{
 
 	@Override
 	public void startStage() {
-		setStage("appearance/ServerNewQuestionStageWindow.fxml");
+		setStage("appearance/NewQuestionWindow.fxml");
 		stage.setTitle("Criador de Questoes - Nova Questao");
 		stage.setResizable(false);
 		stage.show();
@@ -37,7 +42,7 @@ public class ServerNewQuestionWindow implements IStage{
 
 	@Override
 	public void setStage(String stagePath) {
-		sceneFactory = new SceneFactory();
+		SceneFactory sceneFactory = new SceneFactory();
 		this.scene = sceneFactory.buildScene(this, stagePath);
 		this.stage.setScene(this.scene);
 	}
@@ -46,8 +51,49 @@ public class ServerNewQuestionWindow implements IStage{
 	public void setUniqueQuestion() {
 		containerPane.getChildren().clear();
 		ContainerFactory containerFactory = new ContainerFactory();
-		questionContainer = containerFactory.buildContainer(containerPane, "appearance/containers/SimpleQuestionContainer.fxml");
-		containerPane.getChildren().setAll(questionContainer.getContainer());
+		questionContainer = containerFactory.buildQContainer(containerPane, "Unique");
+		containerPane.getChildren().setAll(questionContainer.getContainerPane());
+		menuMain.setText(uniqueQuestion.getText());
+		stage.sizeToScene();
+	}
+	
+	@FXML
+	public void setMultQuestion() {
+		containerPane.getChildren().clear();
+		ContainerFactory containerFactory = new ContainerFactory();
+		questionContainer = containerFactory.buildQContainer(containerPane, "Mult");
+		containerPane.getChildren().setAll(questionContainer.getContainerPane());
+		menuMain.setText(multQuestion.getText());
+		stage.sizeToScene();
+	}
+	
+	@FXML
+	public void setAssertionQuestion() {
+		containerPane.getChildren().clear();
+		ContainerFactory containerFactory = new ContainerFactory();
+		questionContainer = containerFactory.buildQContainer(containerPane, "Assertion");
+		containerPane.getChildren().setAll(questionContainer.getContainerPane());
+		menuMain.setText(assertionQuestion.getText());
+		stage.sizeToScene();
+	}
+	
+	@FXML
+	public void setAssociationQuestion() {
+		containerPane.getChildren().clear();
+		ContainerFactory containerFactory = new ContainerFactory();
+		questionContainer = containerFactory.buildQContainer(containerPane, "Association");
+		containerPane.getChildren().setAll(questionContainer.getContainerPane());
+		menuMain.setText(associationQuestion.getText());
+		stage.sizeToScene();
+	}
+	
+	@FXML
+	public void setOrderQuestion() {
+		containerPane.getChildren().clear();
+		ContainerFactory containerFactory = new ContainerFactory();
+		questionContainer = containerFactory.buildQContainer(containerPane, "Order");
+		containerPane.getChildren().setAll(questionContainer.getContainerPane());
+		menuMain.setText(orderQuestion.getText());
 		stage.sizeToScene();
 	}
 

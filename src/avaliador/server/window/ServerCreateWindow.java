@@ -8,23 +8,21 @@ import avaliador.universal.factories.SceneFactory;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.VBox;
-import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 public class ServerCreateWindow implements IStage{
 	
-	@FXML private TextField questionnaireTextField;
 	@FXML private TextField authorTextField;
-	@FXML private Text totalPointsText;
+	@FXML private TextField titleTextField;
+	@FXML private Label valueLabel;
 	
 	@FXML private ScrollPane questionScrollPane;
-	@FXML private VBox questionVBox;
 	
-	@FXML private Button addQuestionButton;
-	@FXML private Button deleteQuestionButton;
+	@FXML private Button newQuestionButton;
+	@FXML private Button saveButton;
 	
 	//private ArrayList<QuestionContainer> questionContainers;
 	
@@ -41,9 +39,10 @@ public class ServerCreateWindow implements IStage{
 
 	@Override
 	public void startStage() {
-		setStage("appearance/ServerCreateStageWindow.fxml");
+		setStage("appearance/CreateWindow.fxml");
 		stage.setTitle("Criador de Questoes");
 		stage.setResizable(false);
+		stage.sizeToScene();
 		stage.show();
 	}
 	@Override
@@ -54,7 +53,7 @@ public class ServerCreateWindow implements IStage{
 	}
 	
 	@FXML
-	public void createButtonManager() {
+	public void newQuestionManager() {
 		// TEMPORARY DEBUG METHOD BODY. MUST CHANGE LATER.
 		
 		IStage newQuestionWindow = new ServerNewQuestionWindow();
@@ -67,7 +66,7 @@ public class ServerCreateWindow implements IStage{
 	}
 	
 	@FXML
-	public void saveButtonManager() {
+	public void saveManager() {
 		// TO BE ADDED
 	}
 

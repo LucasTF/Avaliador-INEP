@@ -26,7 +26,7 @@ public class ServerHomeWindow implements IStage{
 	
 	@Override
 	public void startStage() {
-		setStage("appearance/ServerHomeStageWindow.fxml");
+		setStage("appearance/ServerHomeWindow.fxml");
 		stage.setTitle("Avaliador INEP - Servidor");
 		stage.setResizable(false);
 		stage.show();
@@ -40,11 +40,9 @@ public class ServerHomeWindow implements IStage{
 	
 	@FXML
 	public void createButtonManager() {
-		// TEMPORARY SOLUTION FOR JUST 1 QUESTIONNAIRE WINDOW. MUST CHANGE LATER.
-		if(questionnaireWindow == null) {
-			questionnaireWindow = new ServerCreateWindow();
-			questionnaireWindow.startStage();
-		}
+		questionnaireWindow = new ServerCreateWindow();
+		questionnaireWindow.startStage();
+		stage.close();
 	}
 	
 	@FXML

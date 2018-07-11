@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="containerPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="646.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <VBox maxWidth="600.0" minWidth="600.0" prefHeight="656.0" prefWidth="600.0" AnchorPane.bottomAnchor="44.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <AnchorPane prefHeight="126.0" prefWidth="600.0">
+               <children>
+                  <TitledPane animated="false" layoutX="8.0" layoutY="14.0" prefHeight="100.0" prefWidth="585.0" text="Descrição da questão" AnchorPane.bottomAnchor="11.0" AnchorPane.leftAnchor="8.0" AnchorPane.rightAnchor="7.0" AnchorPane.topAnchor="14.0">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="77.0" prefWidth="583.0">
+                           <children>
+                              <Text layoutX="14.0" layoutY="18.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Apresenta duas afirmativas ou asserções que podem ou não ser proposições verdadeiras ou corretas,assim como podem ou não estabelecer relações entre si(causa e efeito, proposição e justificativa, princípio e justificativa, asserção e razão). Esse tipo de questão é indicado para avaliação de habilidades complexas." wrappingWidth="561.0000143051147" />
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </TitledPane>
+               </children>
+            </AnchorPane>
+            <Pane prefHeight="475.0" prefWidth="600.0">
+               <children>
+                  <Pane layoutX="87.0" layoutY="14.0" prefHeight="100.0" prefWidth="507.0">
+                     <children>
+                        <Label text="Enunciado da questão:" />
+                        <TextArea fx:id="qStatementArea" layoutY="17.0" prefHeight="70.0" prefWidth="507.0" />
+                     </children>
+                  </Pane>
+                  <Pane layoutX="11.0" layoutY="14.0" prefHeight="100.0" prefWidth="70.0">
+                     <children>
+                        <Label text="N° questão:" />
+                        <Spinner fx:id="qNumberSpinner" editable="true" layoutY="17.0" prefHeight="25.0" prefWidth="62.0" />
+                        <Label layoutY="42.0" text="Nota:" />
+                        <TextField fx:id="qValueField" layoutY="59.0" prefHeight="25.0" prefWidth="62.0" />
+                     </children>
+                  </Pane>
+                  <Pane layoutX="1.0" layoutY="114.0" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="600.0">
+                     <children>
+                        <TextField fx:id="firstAff" layoutX="16.0" layoutY="48.0" prefHeight="25.0" prefWidth="569.0" />
+                        <Text layoutX="250.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Primeira Afirmação" />
+                     </children>
+                  </Pane>
+                  <Pane layoutX="1.0" layoutY="187.0" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="600.0">
+                     <children>
+                        <Text layoutX="248.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Segunda Afirmação" />
+                        <TextField fx:id="secondAff" layoutX="16.0" layoutY="38.0" prefHeight="25.0" prefWidth="569.0" />
+                     </children>
+                  </Pane>
+                  <GridPane layoutX="9.0" layoutY="278.0" prefHeight="184.0" prefWidth="585.0" vgap="5.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="288.0" minWidth="10.0" prefWidth="111.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="542.0" minWidth="10.0" prefWidth="474.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0" />
+                        <Pane prefHeight="200.0" prefWidth="200.0">
+                           <children>
+                              <Label alignment="TOP_LEFT" layoutX="5.0" layoutY="5.0" text="Alternativa correta" />
+                           </children>
+                        </Pane>
+                        <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+                           <children>
+                              <Label layoutX="183.0" layoutY="5.0" text="Texto da alternativa" textAlignment="CENTER" />
+                           </children>
+                        </Pane>
+                        <Pane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
+                           <children>
+                              <RadioButton fx:id="aRadio" layoutX="38.0" layoutY="5.0" mnemonicParsing="false" selected="true" text="A)">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="answerGroup" />
+                                 </toggleGroup>
+                              </RadioButton>
+                           </children>
+                        </Pane>
+                        <Pane layoutX="10.0" layoutY="70.0" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
+                           <children>
+                              <RadioButton fx:id="bRadio" layoutX="38.0" layoutY="5.0" mnemonicParsing="false" text="B)" toggleGroup="$answerGroup" />
+                           </children>
+                        </Pane>
+                        <Pane layoutX="10.0" layoutY="130.0" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="3">
+                           <children>
+                              <RadioButton fx:id="cRadio" layoutX="38.0" layoutY="5.0" mnemonicParsing="false" text="C)" toggleGroup="$answerGroup" />
+                           </children>
+                        </Pane>
+                        <Pane layoutX="10.0" layoutY="190.0" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="4">
+                           <children>
+                              <RadioButton fx:id="dRadio" layoutX="37.0" layoutY="5.0" mnemonicParsing="false" text="D)" toggleGroup="$answerGroup" />
+                           </children>
+                        </Pane>
+                        <Pane layoutX="10.0" layoutY="250.0" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="5">
+                           <children>
+                              <RadioButton fx:id="eRadio" layoutX="39.0" layoutY="5.0" mnemonicParsing="false" text="E)" toggleGroup="$answerGroup" />
+                           </children>
+                        </Pane>
+                        <TextField fx:id="aAlternative" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <TextField fx:id="bAlternative" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <TextField fx:id="cAlternative" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <TextField fx:id="dAlternative" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <TextField fx:id="eAlternative" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                     </children>
+                  </GridPane>
+               </children>
+            </Pane>
+         </children>
+      </VBox>
+      <Pane layoutY="602.0" prefHeight="44.0" prefWidth="600.0">
+         <children>
+            <Button fx:id="addQuestionButton" layoutX="240.0" layoutY="10.0" mnemonicParsing="false" onAction="#addQuestion" prefHeight="25.0" prefWidth="120.0" text="Adicionar Questão" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

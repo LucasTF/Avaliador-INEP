@@ -4,6 +4,6 @@ import javafx.scene.layout.AnchorPane;
 
 public interface IContainer {
 	
-	public AnchorPane getContainer();
+	public AnchorPane getContainerPane();
 
 }

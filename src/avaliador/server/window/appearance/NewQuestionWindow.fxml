@@ -28,12 +28,11 @@
                   <Text layoutX="14.0" layoutY="18.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Selecione o tipo de questão:" />
                   <SplitMenuButton fx:id="menuMain" layoutX="14.0" layoutY="22.0" maxHeight="25.0" maxWidth="350.0" minHeight="25.0" minWidth="350.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="350.0" text="Selecionar questão">
                     <items>
-                      <MenuItem fx:id="qUniqueMenu" mnemonicParsing="false" onAction="#setUniqueQuestion" text="Questão de resposta única" />
-                        <MenuItem mnemonicParsing="false" text="Questão de resposta múltipla" />
-                        <MenuItem mnemonicParsing="false" text="Questão de asserção" />
-                        <MenuItem mnemonicParsing="false" text="Questão de lacuna" />
-                        <MenuItem mnemonicParsing="false" text="Questão de associação" />
-                        <MenuItem mnemonicParsing="false" text="Questão de ordenação" />
+                      <MenuItem fx:id="uniqueQuestion" mnemonicParsing="false" onAction="#setUniqueQuestion" text="Questão de resposta única" />
+                        <MenuItem fx:id="multQuestion" mnemonicParsing="false" onAction="#setMultQuestion" text="Questão de resposta múltipla" />
+                        <MenuItem fx:id="assertionQuestion" mnemonicParsing="false" onAction="#setAssertionQuestion" text="Questão de asserção" />
+                        <MenuItem fx:id="associationQuestion" mnemonicParsing="false" onAction="#setAssociationQuestion" text="Questão de associação" />
+                        <MenuItem fx:id="orderQuestion" mnemonicParsing="false" onAction="#setOrderQuestion" text="Questão de ordenação" />
                     </items>
                   </SplitMenuButton>
                </children>
