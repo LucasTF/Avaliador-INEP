@@ -1,16 +1,16 @@
 package avaliador.server.window;
 
-//import java.util.ArrayList;
+import java.io.IOException;
+import java.util.ArrayList;
 
 import avaliador.server.window.abstractions.IStage;
-//import avaliador.universal.factories.QuestionContainerFactory;
 import avaliador.universal.factories.SceneFactory;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 public class ServerCreateWindow implements IStage{
@@ -19,22 +19,20 @@ public class ServerCreateWindow implements IStage{
 	@FXML private TextField titleTextField;
 	@FXML private Label valueLabel;
 	
-	@FXML private ScrollPane questionScrollPane;
+	@FXML private VBox questionVBox;
 	
 	@FXML private Button newQuestionButton;
 	@FXML private Button saveButton;
 	
-	//private ArrayList<QuestionContainer> questionContainers;
+	private ArrayList<QPointerContainer> questionContainers;
 	
 	private Stage stage;
 	private Scene scene;
 	private SceneFactory sceneFactory;
-	//private QuestionContainerFactory questionFactory;
 	
 	public ServerCreateWindow() {
 		stage = new Stage();
-		//questionContainers = new ArrayList<QuestionContainer>();
-		//questionFactory = new QuestionContainerFactory();
+		questionContainers = new ArrayList<QPointerContainer>();
 	}
 
 	@Override
@@ -54,20 +52,32 @@ public class ServerCreateWindow implements IStage{
 	
 	@FXML
 	public void newQuestionManager() {
-		// TEMPORARY DEBUG METHOD BODY. MUST CHANGE LATER.
-		
-		IStage newQuestionWindow = new ServerNewQuestionWindow();
-		newQuestionWindow.startStage();
-		
-		/*
-		questionContainers.add(questionFactory.buildQuestionContainer(questionVBox));
-		questionVBox.getChildren().add(questionContainers.get(questionContainers.size() - 1).getContainerPane());
-		*/
+		QPointerContainer questionPointer = new QPointerContainer(this);
+		questionPointer.getQuestion().startStage();
 	}
 	
 	@FXML
 	public void saveManager() {
-		// TO BE ADDED
+		
+	}
+	
+	public void dropQuestionContainer(QPointerContainer pointer) {
+		questionVBox.getChildren().remove(pointer.getContainerPane());
+		questionContainers.remove(pointer);
+	}
+	
+	public void createQuestionContainer(QPointerContainer pointer) {
+		try {
+			pointer.loadPointer(questionVBox);
+		} catch (IOException e) {
+			System.out.println("Load failed!");
+		}
+		questionVBox.getChildren().add(pointer.getContainerPane());
+		questionContainers.add(pointer);
+	}
+	
+	public ArrayList<QPointerContainer> getContainerList(){
+		return this.questionContainers;
 	}
 
 }

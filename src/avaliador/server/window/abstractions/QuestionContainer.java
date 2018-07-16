@@ -2,23 +2,21 @@ package avaliador.server.window.abstractions;
 
 import java.io.IOException;
 
+import avaliador.server.window.ServerNewQuestionWindow;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.RadioButton;
-import javafx.scene.control.Spinner;
-import javafx.scene.control.SpinnerValueFactory;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.AnchorPane;
 
-public abstract class QuestionContainer {
+public abstract class QuestionContainer implements IContainer{
 	
 	@FXML protected AnchorPane containerPane;
 	
-	@FXML protected Spinner<Integer> qNumberSpinner;
 	@FXML protected TextField qValueField;
 	@FXML protected TextArea qStatementArea;
 	
@@ -29,16 +27,27 @@ public abstract class QuestionContainer {
 	@FXML protected RadioButton dRadio;
 	@FXML protected RadioButton eRadio;
 	
-	@FXML private Button addQuestionButton;
+	@FXML protected Button addQuestionButton;
 	
-	@FXML public abstract void addQuestion();
+	protected ServerNewQuestionWindow parentWindow;
 	
-	public QuestionContainer(Parent parent, String fxmlPath) throws IOException {
+	public QuestionContainer(ServerNewQuestionWindow parentWindow, Parent parent, String fxmlPath) throws IOException {
 		FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlPath));
 		loader.setController(this);
 		parent = loader.load();
-		this.setSpinner();
+		this.parentWindow = parentWindow;
 		this.qStatementArea.setWrapText(true);
+	}
+	
+	@FXML
+	public void addQuestion() {
+		parentWindow.getPointerContainer().getQuestionnaireWindow().createQuestionContainer(parentWindow.getPointerContainer());
+		parentWindow.getStage().hide();
+		parentWindow.setMenuDisable(true);
+		this.setButtonDisable(true);
+		parentWindow.getPointerContainer().setQuestionTitle(qStatementArea.getText());
+		parentWindow.getStage().setOnCloseRequest(e -> {parentWindow.getPointerContainer().setQuestionTitle(qStatementArea.getText());});
+		//System.out.println(this.getClass().getSimpleName());
 	}
 	
 	public String getQuestionTitle() {
@@ -49,10 +58,6 @@ public abstract class QuestionContainer {
 		return Double.parseDouble(qValueField.getText());
 	}
 	
-	public int getQuestionNumber() {
-		return qNumberSpinner.getValue();
-	}
-	
 	public char getAnswer() {
 		if(aRadio.isSelected()) { return 'A'; }
 		else if(bRadio.isSelected()) { return 'B'; }
@@ -61,9 +66,8 @@ public abstract class QuestionContainer {
 		else{ return 'E'; }
 	}
 	
-	protected void setSpinner() {
-		SpinnerValueFactory<Integer> qNumberSpinnerFactory = new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 100);
-		this.qNumberSpinner.setValueFactory(qNumberSpinnerFactory);
+	public void setButtonDisable(boolean isDisabled) {
+		addQuestionButton.setDisable(isDisabled);
 	}
 
 }

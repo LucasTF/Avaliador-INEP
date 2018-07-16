@@ -2,7 +2,6 @@ package avaliador.server.window;
 
 import java.io.IOException;
 
-import avaliador.server.window.abstractions.IContainer;
 import avaliador.server.window.abstractions.QuestionContainer;
 import javafx.fxml.FXML;
 import javafx.scene.Parent;
@@ -10,7 +9,7 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 
-public class AssociationQuestionContainer extends QuestionContainer implements IContainer{
+public class AssociationQuestionContainer extends QuestionContainer{
 	
 	private static final String fxml = "appearance/containers/AssociationQContainer.fxml";
 	
@@ -31,8 +30,8 @@ public class AssociationQuestionContainer extends QuestionContainer implements I
 	@FXML private TextField dAlternative;
 	@FXML private TextField eAlternative;
 
-	public AssociationQuestionContainer(Parent parent) throws IOException {
-		super(parent, fxml);
+	public AssociationQuestionContainer(ServerNewQuestionWindow parentWindow, Parent parent) throws IOException {
+		super(parentWindow, parent, fxml);
 		this.table11.setWrapText(true);
 		this.table12.setWrapText(true);
 		this.table13.setWrapText(true);
@@ -65,11 +64,6 @@ public class AssociationQuestionContainer extends QuestionContainer implements I
 	@Override
 	public AnchorPane getContainerPane() {
 		return containerPane;
-	}
-
-	@Override
-	public void addQuestion() {
-		// TO BE ADDED
 	}
 
 }
