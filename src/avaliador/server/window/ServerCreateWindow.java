@@ -51,14 +51,26 @@ public class ServerCreateWindow implements IStage{
 	}
 	
 	@FXML
-	public void newQuestionManager() {
+	private void newQuestionManager() {
 		QPointerContainer questionPointer = new QPointerContainer(this);
 		questionPointer.getQuestion().startStage();
 	}
 	
 	@FXML
-	public void saveManager() {
+	private void saveManager() {
 		
+	}
+	
+	public void updateQuestionnaireValue() {
+		double qValue = 0;
+		for(QPointerContainer c : questionContainers) {
+			qValue = qValue + c.getQuestionValue();
+		}
+		setValueLabel(qValue);
+	}
+	
+	private void setValueLabel(double value) {
+		valueLabel.setText(Double.toString(value));
 	}
 	
 	public void dropQuestionContainer(QPointerContainer pointer) {

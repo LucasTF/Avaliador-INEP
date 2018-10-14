@@ -3,6 +3,8 @@ package avaliador.server.window;
 import java.io.IOException;
 
 import avaliador.server.window.abstractions.QuestionContainer;
+import avaliador.universal.enums.ErrorType;
+import avaliador.universal.enums.QuestionType;
 import javafx.fxml.FXML;
 import javafx.scene.Parent;
 import javafx.scene.control.TextArea;
@@ -49,6 +51,49 @@ public class MultQuestionContainer extends QuestionContainer{
 	@Override
 	public AnchorPane getContainerPane() {
 		return containerPane;
+	}
+	
+	@Override
+	public QuestionType getQuestionType() {
+		return QuestionType.MULTIPLE;
+	}
+
+	@Override
+	public String[] getAnswersText(){
+		String[] answers = new String[5];
+		answers[0] = getA();
+		answers[1] = getB();
+		answers[2] = getC();
+		answers[3] = getD();
+		answers[4] = getE();
+		return answers;
+	}
+	
+	public String[] getAffirmations() {
+		String[] affirmatives = new String[5];
+		affirmatives[0] = getAff1();
+		affirmatives[1] = getAff2();
+		affirmatives[2] = getAff3();
+		affirmatives[3] = getAff4();
+		affirmatives[4] = getAff5();
+		return affirmatives;
+	}
+
+	@Override
+	public boolean isInputCorrect() {
+		String[] ans = getAnswersText();
+		String[] aff = getAffirmations();
+		for(int i = 0; i < 5; i++) {
+			if(ans[i].isEmpty()) {
+				alertMessage(ErrorType.EMPTYTEXTBOX);
+				return false;
+			}
+			if(aff[i].isEmpty()) {
+				alertMessage(ErrorType.EMPTYTEXTBOX);
+				return false;
+			}
+		}
+		return true;
 	}
 
 }

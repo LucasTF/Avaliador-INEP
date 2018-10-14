@@ -9,7 +9,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefWidth="600.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml">
    <children>
       <VBox>
          <children>
@@ -29,10 +29,10 @@
                   <SplitMenuButton fx:id="menuMain" layoutX="14.0" layoutY="22.0" maxHeight="25.0" maxWidth="350.0" minHeight="25.0" minWidth="350.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="350.0" text="Selecionar questão">
                     <items>
                       <MenuItem fx:id="uniqueQuestion" mnemonicParsing="false" onAction="#setUniqueQuestion" text="Questão de resposta única" />
-                        <MenuItem fx:id="multQuestion" mnemonicParsing="false" onAction="#setMultQuestion" text="Questão de resposta múltipla" />
+                        <MenuItem fx:id="multQuestion" mnemonicParsing="false" onAction="#setMultQuestion" text="Questão de resposta múltipla/ordenação" />
                         <MenuItem fx:id="assertionQuestion" mnemonicParsing="false" onAction="#setAssertionQuestion" text="Questão de asserção" />
                         <MenuItem fx:id="associationQuestion" mnemonicParsing="false" onAction="#setAssociationQuestion" text="Questão de associação" />
-                        <MenuItem fx:id="orderQuestion" mnemonicParsing="false" onAction="#setOrderQuestion" text="Questão de ordenação" />
+                        <MenuItem fx:id="orderQuestion" mnemonicParsing="false" onAction="#setOrderQuestion" text="Questão de ordenação" visible="false" />
                     </items>
                   </SplitMenuButton>
                </children>

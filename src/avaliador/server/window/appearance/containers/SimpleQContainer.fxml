@@ -16,7 +16,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="containerPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:id="containerPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml">
    <children>
       <VBox maxWidth="600.0" minWidth="600.0" prefHeight="600.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -26,7 +26,7 @@
                     <content>
                       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                            <children>
-                              <Text layoutX="14.0" layoutY="18.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enuncia o problema ou asituação problemana forma de pergunta e apresenta as alternativas de resposta." wrappingWidth="561.0000143051147" />
+                              <Text layoutX="14.0" layoutY="18.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enuncia o problema ou a situação problema na forma de pergunta e apresenta as alternativas de resposta." wrappingWidth="561.0000143051147" />
                            </children>
                         </AnchorPane>
                     </content>

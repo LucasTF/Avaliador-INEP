@@ -6,6 +6,7 @@ public abstract class Question {
 	
 	protected String questionStatement;
 	protected double value;
+	protected char rightAlternative;
 	
 	protected Alternative[] alternative;
 	
@@ -13,7 +14,7 @@ public abstract class Question {
 		alternative = new Alternative[5];
 	}
 	
-	public Question(String qTitle, String a1, String a2, String a3, String a4, String a5, int correct) {
+	public Question(String qTitle, String a1, String a2, String a3, String a4, String a5, char correct) {
 		
 		this.questionStatement = qTitle;
 		
@@ -24,9 +25,7 @@ public abstract class Question {
 		alternative[2] = new Alternative(a3);
 		alternative[3] = new Alternative(a4);
 		alternative[4] = new Alternative(a5);
-		if(correct < 6 && correct > 0) {
-			alternative[correct+1].setIsRight();
-		}
+		this.rightAlternative = correct;
 	}
 	
 	public String getQuestionStatement() {

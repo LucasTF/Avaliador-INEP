@@ -3,6 +3,8 @@ package avaliador.server.window;
 import java.io.IOException;
 
 import avaliador.server.window.abstractions.QuestionContainer;
+import avaliador.universal.enums.ErrorType;
+import avaliador.universal.enums.QuestionType;
 import javafx.fxml.FXML;
 import javafx.scene.Parent;
 import javafx.scene.control.TextArea;
@@ -29,41 +31,82 @@ public class AssociationQuestionContainer extends QuestionContainer{
 	@FXML private TextField cAlternative;
 	@FXML private TextField dAlternative;
 	@FXML private TextField eAlternative;
+	
+	private TextArea[][] tables = new TextArea[2][5];
 
 	public AssociationQuestionContainer(ServerNewQuestionWindow parentWindow, Parent parent) throws IOException {
 		super(parentWindow, parent, fxml);
-		this.table11.setWrapText(true);
-		this.table12.setWrapText(true);
-		this.table13.setWrapText(true);
-		this.table14.setWrapText(true);
-		this.table15.setWrapText(true);
-		this.table21.setWrapText(true);
-		this.table22.setWrapText(true);
-		this.table23.setWrapText(true);
-		this.table24.setWrapText(true);
-		this.table25.setWrapText(true);
+		tables[0][0] = table11;
+		tables[0][1] = table12;
+		tables[0][2] = table13;
+		tables[0][3] = table14;
+		tables[0][4] = table15;
+		tables[1][0] = table21;
+		tables[1][1] = table22;
+		tables[1][2] = table23;
+		tables[1][3] = table24;
+		tables[1][4] = table25;
+		for(int i = 0; i < 2; i++) {
+			for(int j = 0; j < 5; j++) {
+				tables[i][j].setWrapText(true);
+			}
+		}
 	}
 	
-	public String getTable11() { return table11.getText(); }
-	public String getTable12() { return table12.getText(); }
-	public String getTable13() { return table13.getText(); }
-	public String getTable14() { return table14.getText(); }
-	public String getTable15() { return table15.getText(); }
-	public String getTable21() { return table21.getText(); }
-	public String getTable22() { return table22.getText(); }
-	public String getTable23() { return table23.getText(); }
-	public String getTable24() { return table24.getText(); }
-	public String getTable25() { return table25.getText(); }
+	public String[][] getTablesText(){
+		String[][] tablesText = new String[2][5];
+		for(int i = 0; i < 2; i++) {
+			for(int j = 0; j < 5; j++) {
+				tablesText[i][j] = tables[i][j].getText();
+			}
+		}
+		return tablesText;
+	}
 	
 	public String getA() { return aAlternative.getText(); }
 	public String getB() { return bAlternative.getText(); }
 	public String getC() { return cAlternative.getText(); }
 	public String getD() { return dAlternative.getText(); }
 	public String getE() { return eAlternative.getText(); }
+	
+	@Override
+	public QuestionType getQuestionType() {
+		return QuestionType.ASSOCIATION;
+	}
+	
+	@Override
+	public String[] getAnswersText(){
+		String[] answers = new String[5];
+		answers[0] = getA();
+		answers[1] = getB();
+		answers[2] = getC();
+		answers[3] = getD();
+		answers[4] = getE();
+		return answers;
+	}
 
 	@Override
 	public AnchorPane getContainerPane() {
 		return containerPane;
+	}
+
+	@Override
+	public boolean isInputCorrect() {
+		String[][] tables = getTablesText();
+		String[] ans = getAnswersText();
+		for(int i = 0; i < 5; i++) {
+			for(int j = 0; j < 5; j++) {
+				if(tables[i][j].isEmpty()) {
+					alertMessage(ErrorType.EMPTYTEXTBOX);
+					return false;
+				}
+			}
+			if(ans[i].isEmpty()) {
+				alertMessage(ErrorType.EMPTYTEXTBOX);
+				return false;
+			}
+		}
+		return true;
 	}
 
 }

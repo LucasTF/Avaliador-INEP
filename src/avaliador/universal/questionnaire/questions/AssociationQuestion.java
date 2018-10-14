@@ -13,7 +13,7 @@ public class AssociationQuestion extends Question{
 		setBlankColumn(new String[5]);
 	}
 	
-	public AssociationQuestion(String qTitle, String a1, String a2, String a3, String a4, String a5, int correct) {
+	public AssociationQuestion(String qTitle, String a1, String a2, String a3, String a4, String a5, char correct) {
 		super(qTitle, a1, a2, a3, a4, a5, correct);
 	}
 

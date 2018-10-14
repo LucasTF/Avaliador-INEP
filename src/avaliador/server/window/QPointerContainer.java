@@ -19,6 +19,8 @@ public class QPointerContainer implements IContainer{
 	@FXML private Button editButton;
 	@FXML private Button deleteButton;
 	
+	private double questionValue;
+	
 	private static final String fxml = "appearance/containers/QPointerContainer.fxml";
 	
 	private ServerCreateWindow questionnaireWindow;
@@ -47,6 +49,7 @@ public class QPointerContainer implements IContainer{
 			int index = containers.get(i).getQuestionTitle().indexOf(' ');
 			containers.get(i).setQuestionTitle(containers.get(i).getQuestionTitle().substring(index));
 		}
+		questionnaireWindow.updateQuestionnaireValue();
 	}
 	
 	public void loadPointer(Parent parent) throws IOException {
@@ -58,6 +61,14 @@ public class QPointerContainer implements IContainer{
 			questionTitle.setWrapText(true);
 		}
 		questionTitle.setText((getQuestionnaireWindow().getContainerList().indexOf(this)+1) + ". " + qTitle);
+	}
+	
+	public void setQuestionValue(double value) {
+		questionValue = value;
+	}
+	
+	public double getQuestionValue() {
+		return this.questionValue;
 	}
 	
 	public String getQuestionTitle() {

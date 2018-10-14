@@ -3,6 +3,8 @@ package avaliador.server.window;
 import java.io.IOException;
 
 import avaliador.server.window.abstractions.QuestionContainer;
+import avaliador.universal.enums.ErrorType;
+import avaliador.universal.enums.QuestionType;
 import javafx.fxml.FXML;
 import javafx.scene.Parent;
 import javafx.scene.control.TextArea;
@@ -33,8 +35,35 @@ public class UniqueQuestionContainer extends QuestionContainer{
 	public String getD() { return this.dAlternative.getText(); }
 	public String getE() { return this.eAlternative.getText(); }
 	
+	@Override
+	public QuestionType getQuestionType() {
+		return QuestionType.UNIQUE;
+	}
+	
+	@Override
+	public String[] getAnswersText(){
+		String[] answers = new String[5];
+		answers[0] = getA();
+		answers[1] = getB();
+		answers[2] = getC();
+		answers[3] = getD();
+		answers[4] = getE();
+		return answers;
+	}
+	
 	public AnchorPane getContainerPane() {
 		return this.containerPane;
+	}
+
+	@Override
+	public boolean isInputCorrect() {
+		for(String s : getAnswersText()) {
+			if(s.isEmpty()) {
+				alertMessage(ErrorType.EMPTYTEXTBOX);
+				return false;
+			}
+		}
+		return true;
 	}
 	
 }

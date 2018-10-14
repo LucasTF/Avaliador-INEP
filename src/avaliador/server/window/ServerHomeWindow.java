@@ -11,7 +11,6 @@ public class ServerHomeWindow implements IStage{
 	
 	@FXML private Button createQuestionnaireButton;
 	@FXML private Button loadQuestionnaireButton;
-	@FXML private Button dropQuestionnaireButton;
 	@FXML private Button evaluateQuestionnaireButton;
 	
 	private IStage questionnaireWindow = null;
@@ -47,11 +46,6 @@ public class ServerHomeWindow implements IStage{
 	
 	@FXML
 	public void loadButtonManager() {
-		// TO BE ADDED
-	}
-	
-	@FXML
-	public void dropButtonManager() {
 		// TO BE ADDED
 	}
 	
