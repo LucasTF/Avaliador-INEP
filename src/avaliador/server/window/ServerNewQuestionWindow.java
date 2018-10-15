@@ -51,7 +51,7 @@ public class ServerNewQuestionWindow implements IStage{
 	}
 	
 	@FXML
-	public void setUniqueQuestion() {
+	private void setUniqueQuestion() {
 		containerPane.getChildren().clear();
 		ContainerFactory containerFactory = new ContainerFactory();
 		questionContainer = containerFactory.buildQContainer(this, containerPane, "Unique");
@@ -61,7 +61,7 @@ public class ServerNewQuestionWindow implements IStage{
 	}
 	
 	@FXML
-	public void setMultQuestion() {
+	private void setMultQuestion() {
 		containerPane.getChildren().clear();
 		ContainerFactory containerFactory = new ContainerFactory();
 		questionContainer = containerFactory.buildQContainer(this, containerPane, "Mult");
@@ -71,7 +71,7 @@ public class ServerNewQuestionWindow implements IStage{
 	}
 	
 	@FXML
-	public void setAssertionQuestion() {
+	private void setAssertionQuestion() {
 		containerPane.getChildren().clear();
 		ContainerFactory containerFactory = new ContainerFactory();
 		questionContainer = containerFactory.buildQContainer(this, containerPane, "Assertion");
@@ -81,7 +81,7 @@ public class ServerNewQuestionWindow implements IStage{
 	}
 	
 	@FXML
-	public void setAssociationQuestion() {
+	private void setAssociationQuestion() {
 		containerPane.getChildren().clear();
 		ContainerFactory containerFactory = new ContainerFactory();
 		questionContainer = containerFactory.buildQContainer(this, containerPane, "Association");
@@ -91,7 +91,7 @@ public class ServerNewQuestionWindow implements IStage{
 	}
 	
 	@FXML
-	public void setOrderQuestion() {
+	private void setOrderQuestion() {
 		containerPane.getChildren().clear();
 		ContainerFactory containerFactory = new ContainerFactory();
 		questionContainer = containerFactory.buildQContainer(this, containerPane, "Order");
@@ -106,6 +106,10 @@ public class ServerNewQuestionWindow implements IStage{
 	
 	public String getQuestionTitle() {
 		return this.questionContainer.getQuestionTitle();
+	}
+	
+	public QuestionContainer getQuestionInformation() {
+		return questionContainer;
 	}
 	
 	public QPointerContainer getPointerContainer() {

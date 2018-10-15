@@ -5,11 +5,10 @@ import java.io.IOException;
 import avaliador.server.window.ServerNewQuestionWindow;
 import avaliador.universal.enums.ErrorType;
 import avaliador.universal.enums.QuestionType;
+import avaliador.universal.managers.AlertManager;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextArea;
@@ -80,11 +79,8 @@ public abstract class QuestionContainer implements IContainer{
 	public abstract boolean isInputCorrect();
 	
 	protected void alertMessage(ErrorType error) {
-		Alert alert = new Alert(AlertType.WARNING);
-		alert.setTitle("Problemas na Questão!");
-		alert.setHeaderText(null);
-		alert.setContentText(error.getError());
-		alert.showAndWait();
+		AlertManager alert = new AlertManager();
+		alert.alertWarningMessage("Problemas na Questão!", error);
 	}
 	
 	protected boolean isQuestionValid() {

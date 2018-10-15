@@ -5,6 +5,8 @@ public enum ErrorType {
 	EMPTYTITLE("O Título está vazio."),
 	INVALIDGRADE("A nota está formatada incorretamente."),
 	EMPTYTEACHERBOX("Nome de professor não definido."),
+	NOQUESTION("A prova precisa de, pelo menos, uma questão."),
+	SAVINGFAILED("Não foi possível salvar a prova."),
 	EMPTYTEXTBOX("Há espaços em branco na questão.");
 	
 	private String error;

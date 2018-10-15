@@ -4,6 +4,10 @@ import avaliador.universal.questionnaire.questions.abstractions.Question;
 
 public class AssertionQuestion extends Question{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 3291082572279370989L;
 	private String assertion1;
 	private String assertion2;
 	

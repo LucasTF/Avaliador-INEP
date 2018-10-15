@@ -4,6 +4,10 @@ import avaliador.universal.questionnaire.questions.abstractions.Question;
 
 public class MultipleAnswerQuestion extends Question{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -4321569960152161182L;
 	private String[] affirmative;
 	
 	public MultipleAnswerQuestion() {

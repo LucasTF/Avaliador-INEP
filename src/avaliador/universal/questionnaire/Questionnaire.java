@@ -1,11 +1,17 @@
 package avaliador.universal.questionnaire;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 import avaliador.universal.questionnaire.questions.abstractions.Question;
 
-public class Questionnaire {
+public class Questionnaire implements Serializable{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -3614103586720511402L;
+
 	private ArrayList<Question> questions;
 	
 	private String author;

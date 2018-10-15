@@ -4,6 +4,10 @@ import avaliador.universal.questionnaire.questions.abstractions.Question;
 
 public class AssociationQuestion extends Question{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 8691765091615819384L;
 	private String[] numberedColumn;
 	private String[] blankColumn;
 	

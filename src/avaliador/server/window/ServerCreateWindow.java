@@ -3,8 +3,11 @@ package avaliador.server.window;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import avaliador.database.QuestionnaireSaveManager;
 import avaliador.server.window.abstractions.IStage;
+import avaliador.universal.enums.ErrorType;
 import avaliador.universal.factories.SceneFactory;
+import avaliador.universal.managers.AlertManager;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -43,6 +46,7 @@ public class ServerCreateWindow implements IStage{
 		stage.sizeToScene();
 		stage.show();
 	}
+	
 	@Override
 	public void setStage(String stagePath) {
 		sceneFactory = new SceneFactory();
@@ -58,7 +62,27 @@ public class ServerCreateWindow implements IStage{
 	
 	@FXML
 	private void saveManager() {
-		
+		if(isQuestionnaireValid()) {
+			QuestionnaireSaveManager saveQ = new QuestionnaireSaveManager(questionContainers);
+			saveQ.saveQuestionnaire();
+		}
+	}
+	
+	private boolean isQuestionnaireValid() {
+		AlertManager alert = new AlertManager();
+		if(questionContainers.isEmpty()) {
+			alert.alertWarningMessage("Erro no salvamento do questionário.", ErrorType.NOQUESTION);
+			return false;
+		}
+		if(getAuthor().isEmpty()) {
+			alert.alertWarningMessage("Erro no salvamento do questionário.", ErrorType.EMPTYTEACHERBOX);
+			return false;
+		}
+		if(getTitle().isEmpty()) {
+			alert.alertWarningMessage("Erro no salvamento do questionário.", ErrorType.EMPTYTITLE);
+			return false;
+		}
+		return true;
 	}
 	
 	public void updateQuestionnaireValue() {
@@ -69,8 +93,16 @@ public class ServerCreateWindow implements IStage{
 		setValueLabel(qValue);
 	}
 	
-	private void setValueLabel(double value) {
+	public void setValueLabel(double value) {
 		valueLabel.setText(Double.toString(value));
+	}
+	
+	public String getAuthor() {
+		return this.authorTextField.getText();
+	}
+	
+	public String getTitle() {
+		return this.titleTextField.getText();
 	}
 	
 	public void dropQuestionContainer(QPointerContainer pointer) {
