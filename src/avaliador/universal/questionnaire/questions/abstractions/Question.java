@@ -2,6 +2,8 @@ package avaliador.universal.questionnaire.questions.abstractions;
 
 import java.io.Serializable;
 
+import avaliador.universal.enums.QuestionType;
+
 
 public abstract class Question implements Serializable{
 	
@@ -33,6 +35,8 @@ public abstract class Question implements Serializable{
 		this.rightAlternative = correct;
 	}
 	
+	public abstract QuestionType getQuestionType();
+	
 	public String getQuestionStatement() {
 		return this.questionStatement;
 	}
@@ -41,8 +45,8 @@ public abstract class Question implements Serializable{
 		this.questionStatement = qTitle;
 	}
 	
-	public String getRightAlternative() {
-		return this.questionStatement;
+	public char getRightAlternative() {
+		return this.rightAlternative;
 	}
 	
 	public void setRightAlternative(char answer) {
@@ -51,6 +55,14 @@ public abstract class Question implements Serializable{
 	
 	public String[] getAlternatives() {
 		return this.alternatives;
+	}
+	
+	public void setQuestionValue(double value) {
+		this.value = value;
+	}
+	
+	public double getQuestionValue() {
+		return this.value;
 	}
 	
 	public void setAlternatives(String[] aText) {

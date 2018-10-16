@@ -27,8 +27,13 @@ public class AssertionQuestionContainer extends QuestionContainer{
 		super(parentWindow, parent, fxml);
 	}
 	
-	public String getFirstAff() { return firstAff.getText(); }
-	public String getSecondAff() { return secondAff.getText(); }
+	public String getFirstAs() { return firstAff.getText(); }
+	public String getSecondAs() { return secondAff.getText(); }
+	
+	public void setAssertions(String as1, String as2) {
+		firstAff.setText(as1);
+		secondAff.setText(as2);
+	}
 	
 	public String getA() { return aAlternative.getText(); }
 	public String getB() { return bAlternative.getText(); }
@@ -51,6 +56,14 @@ public class AssertionQuestionContainer extends QuestionContainer{
 		answers[4] = getE();
 		return answers;
 	}
+	
+	public void setAlternatives(String[] texts) {
+		aAlternative.setText(texts[0]);
+		bAlternative.setText(texts[1]);
+		cAlternative.setText(texts[2]);
+		dAlternative.setText(texts[3]);
+		eAlternative.setText(texts[4]);
+	}
 
 	@Override
 	public AnchorPane getContainerPane() {
@@ -59,7 +72,7 @@ public class AssertionQuestionContainer extends QuestionContainer{
 
 	@Override
 	public boolean isInputCorrect() {
-		if(!getFirstAff().isEmpty() && !getSecondAff().isEmpty()) {
+		if(!getFirstAs().isEmpty() && !getSecondAs().isEmpty()) {
 			for(String s : getAnswersText()) {
 				if(s.isEmpty()) {
 					alertMessage(ErrorType.EMPTYTEXTBOX);

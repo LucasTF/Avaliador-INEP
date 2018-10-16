@@ -36,11 +36,13 @@ public class ServerNewQuestionWindow implements IStage{
 	}
 
 	@Override
-	public void startStage() {
+	public void startStage(boolean show) {
 		setStage("appearance/NewQuestionWindow.fxml");
 		stage.setTitle("Criador de Questoes - Nova Questao");
 		stage.setResizable(false);
-		stage.show();
+		if(show == true) {
+			stage.show();
+		}
 	}
 
 	@Override
@@ -51,7 +53,7 @@ public class ServerNewQuestionWindow implements IStage{
 	}
 	
 	@FXML
-	private void setUniqueQuestion() {
+	public void setUniqueQuestion() {
 		containerPane.getChildren().clear();
 		ContainerFactory containerFactory = new ContainerFactory();
 		questionContainer = containerFactory.buildQContainer(this, containerPane, "Unique");
@@ -61,7 +63,7 @@ public class ServerNewQuestionWindow implements IStage{
 	}
 	
 	@FXML
-	private void setMultQuestion() {
+	public void setMultQuestion() {
 		containerPane.getChildren().clear();
 		ContainerFactory containerFactory = new ContainerFactory();
 		questionContainer = containerFactory.buildQContainer(this, containerPane, "Mult");
@@ -71,7 +73,7 @@ public class ServerNewQuestionWindow implements IStage{
 	}
 	
 	@FXML
-	private void setAssertionQuestion() {
+	public void setAssertionQuestion() {
 		containerPane.getChildren().clear();
 		ContainerFactory containerFactory = new ContainerFactory();
 		questionContainer = containerFactory.buildQContainer(this, containerPane, "Assertion");
@@ -81,7 +83,7 @@ public class ServerNewQuestionWindow implements IStage{
 	}
 	
 	@FXML
-	private void setAssociationQuestion() {
+	public void setAssociationQuestion() {
 		containerPane.getChildren().clear();
 		ContainerFactory containerFactory = new ContainerFactory();
 		questionContainer = containerFactory.buildQContainer(this, containerPane, "Association");
@@ -91,7 +93,7 @@ public class ServerNewQuestionWindow implements IStage{
 	}
 	
 	@FXML
-	private void setOrderQuestion() {
+	public void setOrderQuestion() {
 		containerPane.getChildren().clear();
 		ContainerFactory containerFactory = new ContainerFactory();
 		questionContainer = containerFactory.buildQContainer(this, containerPane, "Order");

@@ -35,6 +35,20 @@ public class UniqueQuestionContainer extends QuestionContainer{
 	public String getD() { return this.dAlternative.getText(); }
 	public String getE() { return this.eAlternative.getText(); }
 	
+	public void setA(String text) { this.aAlternative.setText(text); }
+	public void setB(String text) { this.bAlternative.setText(text); }
+	public void setC(String text) { this.cAlternative.setText(text); }
+	public void setD(String text) { this.dAlternative.setText(text); }
+	public void setE(String text) { this.eAlternative.setText(text); }
+	
+	public void setAlternatives(String[] texts) {
+		setA(texts[0]);
+		setB(texts[1]);
+		setC(texts[2]);
+		setD(texts[3]);
+		setE(texts[4]);
+	}
+	
 	@Override
 	public QuestionType getQuestionType() {
 		return QuestionType.UNIQUE;

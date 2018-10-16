@@ -1,5 +1,6 @@
 package avaliador.universal.questionnaire.questions;
 
+import avaliador.universal.enums.QuestionType;
 import avaliador.universal.questionnaire.questions.abstractions.Question;
 
 public class AssertionQuestion extends Question{
@@ -32,6 +33,11 @@ public class AssertionQuestion extends Question{
 	
 	public String getAssertion2() {
 		return this.assertion2;
+	}
+
+	@Override
+	public QuestionType getQuestionType() {
+		return QuestionType.ASSERTION;
 	}
 
 }

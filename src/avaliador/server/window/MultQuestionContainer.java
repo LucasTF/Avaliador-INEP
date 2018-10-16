@@ -69,6 +69,14 @@ public class MultQuestionContainer extends QuestionContainer{
 		return answers;
 	}
 	
+	public void setAlternatives(String[] texts) {
+		aAlternative.setText(texts[0]);
+		bAlternative.setText(texts[1]);
+		cAlternative.setText(texts[2]);
+		dAlternative.setText(texts[3]);
+		eAlternative.setText(texts[4]);
+	}
+	
 	public String[] getAffirmations() {
 		String[] affirmatives = new String[5];
 		affirmatives[0] = getAff1();
@@ -77,6 +85,14 @@ public class MultQuestionContainer extends QuestionContainer{
 		affirmatives[3] = getAff4();
 		affirmatives[4] = getAff5();
 		return affirmatives;
+	}
+	
+	public void setAffirmations(String[] aff) {
+		affirmative1.setText(aff[0]);
+		affirmative2.setText(aff[1]);
+		affirmative3.setText(aff[2]);
+		affirmative4.setText(aff[3]);
+		affirmative5.setText(aff[4]);
 	}
 
 	@Override

@@ -58,8 +58,16 @@ public abstract class QuestionContainer implements IContainer{
 		return qStatementArea.getText();
 	}
 	
+	public void setQuestionTitle(String title) {
+		qStatementArea.setText(title);
+	}
+	
 	public double getQuestionValue() {
 		return Double.parseDouble(qValueField.getText());
+	}
+	
+	public void setQuestionValue(double value) {
+		qValueField.setText(Double.toString(value));
 	}
 	
 	public char getAnswer() {
@@ -68,6 +76,14 @@ public abstract class QuestionContainer implements IContainer{
 		else if(cRadio.isSelected()) { return 'C'; }
 		else if(dRadio.isSelected()) { return 'D'; }
 		else{ return 'E'; }
+	}
+	
+	public void setAnswer(char ans) {
+		if(ans == 'A') aRadio.setSelected(true);
+		else if(ans == 'B') bRadio.setSelected(true);
+		else if(ans == 'C') cRadio.setSelected(true);
+		else if(ans == 'D') dRadio.setSelected(true);
+		else if(ans == 'E') eRadio.setSelected(true);
 	}
 	
 	protected void setButtonDisable(boolean isDisabled) {

@@ -1,5 +1,6 @@
 package avaliador.universal.questionnaire.questions;
 
+import avaliador.universal.enums.QuestionType;
 import avaliador.universal.questionnaire.questions.abstractions.Question;
 
 public class AssociationQuestion extends Question{
@@ -8,33 +9,28 @@ public class AssociationQuestion extends Question{
 	 * 
 	 */
 	private static final long serialVersionUID = 8691765091615819384L;
-	private String[] numberedColumn;
-	private String[] blankColumn;
+	private String[][] tables;
 	
 	public AssociationQuestion() {
 		super();
-		setNumberedColumn(new String[5]);
-		setBlankColumn(new String[5]);
-	}
-	
-	public AssociationQuestion(String qTitle, String a1, String a2, String a3, String a4, String a5, char correct) {
-		super(qTitle, a1, a2, a3, a4, a5, correct);
+		tables = new String[2][5];
 	}
 
-	public String[] getNumberedColumn() {
-		return numberedColumn;
+	@Override
+	public QuestionType getQuestionType() {
+		return QuestionType.ASSOCIATION;
 	}
 
-	public void setNumberedColumn(String[] numberedColumn) {
-		this.numberedColumn = numberedColumn;
+	public String[][] getTables() {
+		return tables;
 	}
 
-	public String[] getBlankColumn() {
-		return blankColumn;
-	}
-
-	public void setBlankColumn(String[] blankColumn) {
-		this.blankColumn = blankColumn;
+	public void setTables(String[][] text) {
+		for(int i = 0; i < 2; i++) {
+			for(int j = 0; j < 5; j++) {
+				tables[i][j] = text[i][j];
+			}
+		}
 	}
 
 }

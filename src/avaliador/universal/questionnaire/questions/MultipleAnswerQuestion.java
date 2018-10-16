@@ -1,5 +1,6 @@
 package avaliador.universal.questionnaire.questions;
 
+import avaliador.universal.enums.QuestionType;
 import avaliador.universal.questionnaire.questions.abstractions.Question;
 
 public class MultipleAnswerQuestion extends Question{
@@ -23,6 +24,23 @@ public class MultipleAnswerQuestion extends Question{
 		affirmative[2] = af3;
 		affirmative[3] = af4;
 		affirmative[4] = af5;
+	}
+	
+	public void setAffirmatives(String[] text) {
+		affirmative[0] = text[0];
+		affirmative[1] = text[1];
+		affirmative[2] = text[2];
+		affirmative[3] = text[3];
+		affirmative[4] = text[4];
+	}
+	
+	public String[] getAffirmatives() {
+		return this.affirmative;
+	}
+
+	@Override
+	public QuestionType getQuestionType() {
+		return QuestionType.MULTIPLE;
 	}
 
 

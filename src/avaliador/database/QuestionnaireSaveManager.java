@@ -29,6 +29,8 @@ public class QuestionnaireSaveManager {
 	
 	private Questionnaire serializeQuestionnaire(ArrayList<QPointerContainer> qc) {
 		Questionnaire questionnaire = new Questionnaire();
+		questionnaire.setAuthor(qc.get(0).getQuestionnaireWindow().getAuthor());
+		questionnaire.setTitle(qc.get(0).getQuestionnaireWindow().getTitle());
 		QuestionMapperManager mapper = new QuestionMapperManager();
 		for(QPointerContainer p : qc) {
 			Question q = mapper.mapQuestion(p.getQuestion().getQuestionInformation());
@@ -69,32 +71,5 @@ public class QuestionnaireSaveManager {
 			alert.alertErrorMessage("Erro na geração da prova!", ErrorType.SAVINGFAILED);
 		}
 	}
-	
-	/*public ArrayList<QPointerContainer> loadQuestionnaire() {
-		ArrayList<QPointerContainer> questionnaire = new ArrayList<QPointerContainer>();
-		FileInputStream f = null;
-		ObjectInputStream o = null;
-		try {
-			f = new FileInputStream(new File("Questionnaire-1.qst"));
-			o = new ObjectInputStream(f);
-			while(true) {
-				questionnaire.add((QPointerContainer) o.readObject());
-			}
-		} catch (EOFException e) {
-			try {
-				o.close();
-				f.close();
-			} catch (IOException e1) {
-				System.out.println("Erro");
-			}
-			System.out.println("Load concluido!");
-			return questionnaire;
-		} catch (ClassNotFoundException e) {
-			System.out.println("Classe não encontrada!");
-		} catch (IOException e) {
-			System.out.println("Ue");
-		}
-		return questionnaire;
-	}*/
 
 }

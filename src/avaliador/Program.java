@@ -18,7 +18,7 @@ public class Program extends Application{
 	public void start(Stage homeStage) throws Exception {
 		if(appType.equals("Server")) {
 			IStage serverWindow = new ServerHomeWindow(homeStage);
-			serverWindow.startStage();
+			serverWindow.startStage(true);
 		}
 		else if(appType.equals("Client")) {
 			

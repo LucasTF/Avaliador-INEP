@@ -8,6 +8,9 @@ import avaliador.server.window.abstractions.IStage;
 import avaliador.universal.enums.ErrorType;
 import avaliador.universal.factories.SceneFactory;
 import avaliador.universal.managers.AlertManager;
+import avaliador.universal.managers.ContainerMapperManager;
+import avaliador.universal.questionnaire.Questionnaire;
+import avaliador.universal.questionnaire.questions.abstractions.Question;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -36,15 +39,32 @@ public class ServerCreateWindow implements IStage{
 	public ServerCreateWindow() {
 		stage = new Stage();
 		questionContainers = new ArrayList<QPointerContainer>();
+		startStage(true);
+	}
+
+	public ServerCreateWindow(Questionnaire q) {
+		stage = new Stage();
+		questionContainers = new ArrayList<QPointerContainer>();
+		startStage(true);
+		authorTextField.setText(q.getAuthor());
+		titleTextField.setText(q.getTitle());
+		for(Question question : q.getQuestions()) {
+			QPointerContainer qp = loadQuestionManager();
+			ContainerMapperManager mapper = new ContainerMapperManager(qp, question);
+			mapper.mapContainer();
+			qp.getQuestion().getQuestionInformation().addQuestion();
+		}
 	}
 
 	@Override
-	public void startStage() {
+	public void startStage(boolean show) {
 		setStage("appearance/CreateWindow.fxml");
 		stage.setTitle("Criador de Questoes");
 		stage.setResizable(false);
 		stage.sizeToScene();
-		stage.show();
+		if(show == true) {
+			stage.show();
+		}
 	}
 	
 	@Override
@@ -57,7 +77,13 @@ public class ServerCreateWindow implements IStage{
 	@FXML
 	private void newQuestionManager() {
 		QPointerContainer questionPointer = new QPointerContainer(this);
-		questionPointer.getQuestion().startStage();
+		questionPointer.getQuestion().startStage(true);
+	}
+	
+	private QPointerContainer loadQuestionManager() {
+		QPointerContainer questionPointer = new QPointerContainer(this);
+		questionPointer.getQuestion().startStage(false);
+		return questionPointer;
 	}
 	
 	@FXML

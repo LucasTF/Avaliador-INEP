@@ -1,7 +1,9 @@
 package avaliador.server.window;
 
+import avaliador.database.QuestionnaireLoadManager;
 import avaliador.server.window.abstractions.IStage;
 import avaliador.universal.factories.SceneFactory;
+import avaliador.universal.questionnaire.Questionnaire;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -13,7 +15,8 @@ public class ServerHomeWindow implements IStage{
 	@FXML private Button loadQuestionnaireButton;
 	@FXML private Button evaluateQuestionnaireButton;
 	
-	private IStage questionnaireWindow = null;
+	@SuppressWarnings("unused")
+	private IStage questionnaireWindow;
 	
 	private Stage stage;
 	private Scene scene;
@@ -24,12 +27,15 @@ public class ServerHomeWindow implements IStage{
 	}
 	
 	@Override
-	public void startStage() {
+	public void startStage(boolean show) {
 		setStage("appearance/ServerHomeWindow.fxml");
-		stage.setTitle("Avaliador INEP - Servidor");
+		stage.setTitle("Avaliador INEP - Criador de Questões");
 		stage.setResizable(false);
-		stage.show();
+		if(show == true) {
+			stage.show();
+		}
 	}
+	
 	@Override
 	public void setStage(String stagePath) {
 		sceneFactory = new SceneFactory();
@@ -40,13 +46,15 @@ public class ServerHomeWindow implements IStage{
 	@FXML
 	public void createButtonManager() {
 		questionnaireWindow = new ServerCreateWindow();
-		questionnaireWindow.startStage();
 		stage.close();
 	}
 	
 	@FXML
 	public void loadButtonManager() {
-		// TO BE ADDED
+		QuestionnaireLoadManager loader = new QuestionnaireLoadManager();
+		Questionnaire q = loader.loadQuestionnaire();
+		questionnaireWindow = new ServerCreateWindow(q);
+		stage.close();
 	}
 	
 	@FXML

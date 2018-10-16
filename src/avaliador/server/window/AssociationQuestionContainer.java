@@ -63,6 +63,14 @@ public class AssociationQuestionContainer extends QuestionContainer{
 		return tablesText;
 	}
 	
+	public void setTablesText(String[][] text) {
+		for(int i = 0; i < 2; i++) {
+			for(int j = 0; j < 5; j++) {
+				tables[i][j].setText(text[i][j]);
+			}
+		}
+	}
+	
 	public String getA() { return aAlternative.getText(); }
 	public String getB() { return bAlternative.getText(); }
 	public String getC() { return cAlternative.getText(); }
@@ -84,6 +92,14 @@ public class AssociationQuestionContainer extends QuestionContainer{
 		answers[4] = getE();
 		return answers;
 	}
+	
+	public void setAlternatives(String[] texts) {
+		aAlternative.setText(texts[0]);
+		bAlternative.setText(texts[1]);
+		cAlternative.setText(texts[2]);
+		dAlternative.setText(texts[3]);
+		eAlternative.setText(texts[4]);
+	}
 
 	@Override
 	public AnchorPane getContainerPane() {
@@ -94,7 +110,7 @@ public class AssociationQuestionContainer extends QuestionContainer{
 	public boolean isInputCorrect() {
 		String[][] tables = getTablesText();
 		String[] ans = getAnswersText();
-		for(int i = 0; i < 5; i++) {
+		for(int i = 0; i < 2; i++) {
 			for(int j = 0; j < 5; j++) {
 				if(tables[i][j].isEmpty()) {
 					alertMessage(ErrorType.EMPTYTEXTBOX);
