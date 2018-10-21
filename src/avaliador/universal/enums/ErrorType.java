@@ -7,6 +7,7 @@ public enum ErrorType {
 	EMPTYTEACHERBOX("Nome de professor não definido."),
 	NOQUESTION("A prova precisa de, pelo menos, uma questão."),
 	SAVINGFAILED("Não foi possível salvar a prova."),
+	EMPTYSTUDENT("O nome do aluno está em branco."),
 	EMPTYTEXTBOX("Há espaços em branco na questão.");
 	
 	private String error;

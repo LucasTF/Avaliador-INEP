@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 import avaliador.database.QuestionnaireSaveManager;
-import avaliador.server.window.abstractions.IStage;
+import avaliador.universal.abstractions.IStage;
 import avaliador.universal.enums.ErrorType;
 import avaliador.universal.factories.SceneFactory;
 import avaliador.universal.managers.AlertManager;
@@ -67,8 +67,7 @@ public class ServerCreateWindow implements IStage{
 		}
 	}
 	
-	@Override
-	public void setStage(String stagePath) {
+	private void setStage(String stagePath) {
 		sceneFactory = new SceneFactory();
 		this.scene = sceneFactory.buildScene(this, stagePath);
 		this.stage.setScene(this.scene);

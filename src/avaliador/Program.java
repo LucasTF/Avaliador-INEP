@@ -1,7 +1,8 @@
 package avaliador;
 
+import avaliador.client.window.ClientQuestionnaireWindow;
 import avaliador.server.window.ServerHomeWindow;
-import avaliador.server.window.abstractions.IStage;
+import avaliador.universal.abstractions.IStage;
 import javafx.application.Application;
 import javafx.stage.Stage;
 
@@ -21,7 +22,8 @@ public class Program extends Application{
 			serverWindow.startStage(true);
 		}
 		else if(appType.equals("Client")) {
-			
+			IStage clientWindow = new ClientQuestionnaireWindow(homeStage);
+			clientWindow.startStage(true);
 		}
 	}
 

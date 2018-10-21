@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="questionPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="340.0" prefWidth="685.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <AnchorPane prefHeight="60.0" prefWidth="598.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label fx:id="questionValue" text="(0.0)" AnchorPane.leftAnchor="3.0" AnchorPane.topAnchor="6.0" />
+            <Label fx:id="questionNumber" text="N." AnchorPane.leftAnchor="32.0" AnchorPane.topAnchor="6.0" />
+            <Label fx:id="questionTitle" alignment="TOP_LEFT" maxWidth="550.0" minWidth="500.0" prefHeight="17.0" prefWidth="550.0" text="Texto da Questão" wrapText="true" AnchorPane.leftAnchor="44.0" AnchorPane.rightAnchor="4.0" AnchorPane.topAnchor="6.0" />
+            <Separator layoutX="-6.0" layoutY="59.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutY="62.0" prefHeight="91.0" prefWidth="685.0" AnchorPane.bottomAnchor="160.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="62.0">
+         <children>
+            <Label fx:id="affirmative1" alignment="CENTER_RIGHT" layoutX="14.0" layoutY="4.0" prefHeight="21.0" prefWidth="320.0" text="I. Opção 1" textAlignment="RIGHT" wrapText="true" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="351.0">
+               <padding>
+                  <Insets bottom="2.0" top="2.0" />
+               </padding>
+            </Label>
+            <Label fx:id="affirmative2" alignment="CENTER_RIGHT" layoutX="14.0" layoutY="25.0" prefHeight="21.0" prefWidth="320.0" text="II. Opção 2" textAlignment="CENTER" wrapText="true" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="351.0">
+               <padding>
+                  <Insets bottom="2.0" top="2.0" />
+               </padding>
+            </Label>
+            <Label fx:id="affirmative3" alignment="CENTER_RIGHT" layoutX="14.0" layoutY="46.0" prefHeight="21.0" prefWidth="320.0" text="III. Opção 3" textAlignment="CENTER" wrapText="true" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="351.0">
+               <padding>
+                  <Insets bottom="2.0" top="2.0" />
+               </padding>
+            </Label>
+            <Label fx:id="affirmative4" alignment="CENTER_RIGHT" layoutX="14.0" layoutY="67.0" prefHeight="21.0" prefWidth="320.0" text="IV. Opção 4" textAlignment="CENTER" wrapText="true">
+               <padding>
+                  <Insets bottom="2.0" top="2.0" />
+               </padding>
+            </Label>
+            <Label fx:id="affirmative5" alignment="CENTER_RIGHT" layoutX="14.0" layoutY="88.0" prefHeight="21.0" prefWidth="320.0" text="V. Opção 5" textAlignment="CENTER" wrapText="true">
+               <padding>
+                  <Insets bottom="2.0" top="2.0" />
+               </padding>
+            </Label>
+            <Label fx:id="association1" layoutX="351.0" layoutY="4.0" prefHeight="21.0" prefWidth="320.0" text="( ). Associação 1" textAlignment="CENTER" wrapText="true" AnchorPane.leftAnchor="351.0" AnchorPane.rightAnchor="14.0">
+               <padding>
+                  <Insets bottom="2.0" top="2.0" />
+               </padding>
+            </Label>
+            <Label fx:id="association2" layoutX="351.0" layoutY="25.0" prefHeight="21.0" prefWidth="320.0" text="( ). Associação 2" textAlignment="CENTER" wrapText="true" AnchorPane.leftAnchor="351.0" AnchorPane.rightAnchor="14.0">
+               <padding>
+                  <Insets bottom="2.0" top="2.0" />
+               </padding>
+            </Label>
+            <Label fx:id="association3" layoutX="351.0" layoutY="46.0" prefHeight="21.0" prefWidth="320.0" text="( ). Associação 3" textAlignment="CENTER" wrapText="true" AnchorPane.leftAnchor="351.0" AnchorPane.rightAnchor="14.0">
+               <padding>
+                  <Insets bottom="2.0" top="2.0" />
+               </padding>
+            </Label>
+            <Label fx:id="association4" layoutX="351.0" layoutY="67.0" prefHeight="21.0" prefWidth="320.0" text="( ). Associação 4" textAlignment="CENTER" wrapText="true" AnchorPane.leftAnchor="351.0" AnchorPane.rightAnchor="14.0">
+               <padding>
+                  <Insets bottom="2.0" top="2.0" />
+               </padding>
+            </Label>
+            <Label fx:id="association5" layoutX="351.0" layoutY="88.0" prefHeight="21.0" prefWidth="320.0" text="( ). Associação 5" textAlignment="CENTER" wrapText="true" AnchorPane.leftAnchor="351.0" AnchorPane.rightAnchor="14.0">
+               <padding>
+                  <Insets bottom="2.0" top="2.0" />
+               </padding>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutY="60.0" prefHeight="140.0" prefWidth="598.0" AnchorPane.bottomAnchor="11.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <children>
+            <RadioButton fx:id="alternativeA" layoutX="15.0" layoutY="14.0" mnemonicParsing="false" text="Alternativa A">
+               <padding>
+                  <Insets bottom="5.0" top="5.0" />
+               </padding>
+               <toggleGroup>
+                  <ToggleGroup fx:id="questionAlternatives" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="alternativeB" layoutX="15.0" layoutY="41.0" mnemonicParsing="false" text="Alternativa B" toggleGroup="$questionAlternatives">
+               <padding>
+                  <Insets bottom="5.0" top="5.0" />
+               </padding>
+            </RadioButton>
+            <RadioButton fx:id="alternativeC" layoutX="15.0" layoutY="68.0" mnemonicParsing="false" text="Alternativa C" toggleGroup="$questionAlternatives">
+               <padding>
+                  <Insets bottom="5.0" top="5.0" />
+               </padding>
+            </RadioButton>
+            <RadioButton fx:id="alternativeD" layoutX="15.0" layoutY="95.0" mnemonicParsing="false" text="Alternativa D" toggleGroup="$questionAlternatives">
+               <padding>
+                  <Insets bottom="5.0" top="5.0" />
+               </padding>
+            </RadioButton>
+            <RadioButton fx:id="alternativeE" layoutX="16.0" layoutY="122.0" mnemonicParsing="false" text="Alternativa E" toggleGroup="$questionAlternatives">
+               <padding>
+                  <Insets bottom="5.0" top="5.0" />
+               </padding>
+            </RadioButton>
+         </children>
+      </AnchorPane>
+      <Separator layoutY="219.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+   </children>
+</AnchorPane>

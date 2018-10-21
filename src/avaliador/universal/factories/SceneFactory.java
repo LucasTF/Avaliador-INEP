@@ -2,7 +2,7 @@ package avaliador.universal.factories;
 
 import java.io.IOException;
 
-import avaliador.server.window.abstractions.IStage;
+import avaliador.universal.abstractions.IStage;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;

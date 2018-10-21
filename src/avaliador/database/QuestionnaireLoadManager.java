@@ -11,6 +11,21 @@ import javafx.stage.Stage;
 
 public class QuestionnaireLoadManager {
 	
+	public File getQuestionnaireFile() {
+		FileChooser ch = new FileChooser();
+		ch.setTitle("Carregar Prova");
+		ch.getExtensionFilters().add(new FileChooser.ExtensionFilter("Questionário", "*.qst"));
+		File file = ch.showOpenDialog(new Stage());
+		if(file != null) {
+			return file;
+		}
+		else {
+			// Change this later
+			System.out.println("Não funciona");
+			return null;
+		}
+	}
+	
 	private Questionnaire selectLoadPath() {
 		FileChooser ch = new FileChooser();
 		ch.setTitle("Carregar Prova");

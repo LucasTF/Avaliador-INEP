@@ -3,6 +3,7 @@ package avaliador.server.window.abstractions;
 import java.io.IOException;
 
 import avaliador.server.window.ServerNewQuestionWindow;
+import avaliador.universal.abstractions.IContainer;
 import avaliador.universal.enums.ErrorType;
 import avaliador.universal.enums.QuestionType;
 import avaliador.universal.managers.AlertManager;

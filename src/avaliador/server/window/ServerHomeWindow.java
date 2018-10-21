@@ -1,7 +1,7 @@
 package avaliador.server.window;
 
 import avaliador.database.QuestionnaireLoadManager;
-import avaliador.server.window.abstractions.IStage;
+import avaliador.universal.abstractions.IStage;
 import avaliador.universal.factories.SceneFactory;
 import avaliador.universal.questionnaire.Questionnaire;
 import javafx.fxml.FXML;
@@ -36,8 +36,7 @@ public class ServerHomeWindow implements IStage{
 		}
 	}
 	
-	@Override
-	public void setStage(String stagePath) {
+	private void setStage(String stagePath) {
 		sceneFactory = new SceneFactory();
 		this.scene = sceneFactory.buildScene(this, stagePath);
 		this.stage.setScene(this.scene);

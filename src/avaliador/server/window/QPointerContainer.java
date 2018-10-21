@@ -3,7 +3,7 @@ package avaliador.server.window;
 import java.io.IOException;
 import java.util.ArrayList;
 
-import avaliador.server.window.abstractions.IContainer;
+import avaliador.universal.abstractions.IContainer;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
