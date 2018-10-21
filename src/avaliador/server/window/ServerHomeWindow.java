@@ -1,5 +1,9 @@
 package avaliador.server.window;
 
+import java.util.ArrayList;
+
+import avaliador.client.AnsweredQuestionnaire;
+import avaliador.database.AnswerLoadManager;
 import avaliador.database.QuestionnaireLoadManager;
 import avaliador.universal.abstractions.IStage;
 import avaliador.universal.factories.SceneFactory;
@@ -58,7 +62,10 @@ public class ServerHomeWindow implements IStage{
 	
 	@FXML
 	public void evaluateButtonManager() {
-		// TO BE ADDED
+		AnswerLoadManager loader = new AnswerLoadManager();
+		ArrayList<AnsweredQuestionnaire> ans = loader.loadQuestionnaire();
+		questionnaireWindow = new EvaluateWindow(ans);
+		stage.close();
 	}
 	
 	

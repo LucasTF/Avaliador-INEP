@@ -6,19 +6,19 @@
 <?import javafx.scene.layout.AnchorPane?>
 
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="870.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="870.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml">
    <children>
-      <TableView layoutX="25.0" layoutY="14.0" prefHeight="240.0" prefWidth="821.0">
+      <TableView fx:id="resultTable" layoutX="25.0" layoutY="14.0" prefHeight="240.0" prefWidth="821.0">
         <columns>
-          <TableColumn prefWidth="150.0" text="Título" />
-          <TableColumn prefWidth="150.0" text="Avaliador" />
-            <TableColumn prefWidth="150.0" text="Estudante" />
-            <TableColumn prefWidth="115.0" text="Questões corretas" />
-            <TableColumn prefWidth="115.0" text="Questões erradas" />
-            <TableColumn prefWidth="70.0" text="Valor final" />
-            <TableColumn prefWidth="70.0" text="Valor total" />
+          <TableColumn fx:id="titleColumn" prefWidth="150.0" text="Título" />
+          <TableColumn fx:id="authorColumn" prefWidth="150.0" text="Avaliador" />
+            <TableColumn fx:id="studentColumn" prefWidth="150.0" text="Estudante" />
+            <TableColumn fx:id="correctAnswersColumn" prefWidth="115.0" text="Questões corretas" />
+            <TableColumn fx:id="wrongAnswersColumn" prefWidth="115.0" text="Questões erradas" />
+            <TableColumn fx:id="finalValueColumn" prefWidth="70.0" text="Valor final" />
+            <TableColumn fx:id="totalValueColumn" prefWidth="70.0" text="Valor total" />
         </columns>
       </TableView>
-      <Button layoutX="753.0" layoutY="261.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="93.0" text="Voltar" />
+      <Button fx:id="returnButton" layoutX="753.0" layoutY="261.0" mnemonicParsing="false" onAction="#returnToMainWindow" prefHeight="25.0" prefWidth="93.0" text="Voltar" />
    </children>
 </AnchorPane>

@@ -48,7 +48,7 @@ public class AnsweredQuestionnaire implements Serializable{
 			this.correctAnswers = Integer.toString(questionID);
 		}
 		else {
-			this.correctAnswers.concat(", " + Integer.toString(questionID));
+			this.correctAnswers = this.correctAnswers + ", " + Integer.toString(questionID);
 		}
 	}
 	public String getWrongAnswers() {
@@ -59,7 +59,7 @@ public class AnsweredQuestionnaire implements Serializable{
 			this.wrongAnswers = Integer.toString(questionID);
 		}
 		else {
-			this.wrongAnswers.concat(", " + Integer.toString(questionID));
+			this.wrongAnswers = this.wrongAnswers + ", " + Integer.toString(questionID);
 		}
 	}
 	public double getTotalValue() {
